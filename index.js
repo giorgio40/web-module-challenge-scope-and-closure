@@ -62,7 +62,7 @@ Use the inning function below to do the following:
 */
 
 function inning() {
-    return Math.floor(Math.random() * 3)
+    return Math.floor(Math.random() * 3);
 }
 
 // console.log(inning())
@@ -99,25 +99,29 @@ function finalScore(inningCB, number) {
 
 // console.log(finalScore(inning, 9))
 
-/* Task 4: 
-// create a function called getInningScore 
+/* Task 4: // create a function called getInningScore 
 // the function should take the inning function as an argument 
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
 
-function getInningScore(inningCb) {
-    let score = {
-        away: 0,
-        home: 0
-    }
-    score = {
-        home: score.home + inningCB(),
-        away: score.away + InningCB()
 
+function getInningScore(inningCB) {
+    return {
+        home: inningCB(),
+        away: inningCB()
     }
-
-    return score;
 }
-console.log(getInningScore())
+// let score = {
+//     away: 0,
+//     home: 0
+// }
+// score = {
+//     home: score.home + inningCB(),
+//     away: score.away + InningCB()
+
+// }
+
+// return score;
+console.log(getInningScore(inning))
     /* Task 5: scoreboard()
     Use the scoreboard function below to do the following:
       1. Receive a callback function, that you create, called `getInningScore`
