@@ -62,7 +62,7 @@ Use the inning function below to do the following:
 */
 
 function inning() {
-    return Math.floor(Math.random(1) * Math.floor(9));
+    return Math.floor(Math.random() * 3)
 }
 
 // console.log(inning())
@@ -78,76 +78,88 @@ For example: invoking finalScore(inning, 9) might return this object:
   "Away": 5
 }
 */
-debugger
 
-function finalScore(inning, number) {
-    const totalGame = {};
-    let homeScore = 0;
-    let awayScore = 0;
-    for (let i = 0; i < 9; i++) {
-        debugger
-        const currentScore = inning
-        homeScore = homeScore + currentScore.home
-        awayScore = awayScore + currentScore.away
-        return totalGame;
-        debugger
+
+function finalScore(inningCB, number) {
+    let totalGame = {
+        home: 0,
+        away: 0
+    };
+    for (let i = 0; i <= number; i++) {
+        totalGame = {
+            home: totalGame.home + inningCB(),
+            away: totalGame.away + inningCB()
+        }
+
+
+
     }
-
-
+    return totalGame;
 }
 
-console.log(finalScore())
+// console.log(finalScore(inning, 9))
 
 /* Task 4: 
 // create a function called getInningScore 
 // the function should take the inning function as an argument 
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
 
-function getInningScore( /*Your Code Here */ ) {
-    /*Your Code Here */
+function getInningScore(inningCb) {
+    let score = {
+        away: 0,
+        home: 0
+    }
+    score = {
+        home: score.home + inningCB(),
+        away: score.away + InningCB()
+
+    }
+
+    return score;
 }
-/* Task 5: scoreboard()
-Use the scoreboard function below to do the following:
-  1. Receive a callback function, that you create, called `getInningScore`
-  2. Receive the callback function `inning` from Task 2
-  3. Receive a number of innings to be played
-  4. Return an array where each of it's index values equals a string stating the
-  Home and Away team's scores for each inning (see example below)
-  5. If there's a tie, add this message with the score to the end of the array: 
-     "This game will require extra innings: Away 12 - Home 12"  (see tie example below)
-     If there is no tie, add this message to the end of the array: 
-     "Final Score: Away 13 - Home 11"  (see no tie example below)
-  HINT: `getInningScore` should be invoked by `scoreboard` and use `inning` to get and return the scores back to `scoreboard`
-  
-  For example: If there is no tie, invoking scoreboard(getInningScore,inning, 9) might return 
-  an array of strings like this:
-[
-  "Inning 1: Away 1 - Home 2", 
-  "Inning 2: Away 2 - Home 3",
-  "Inning 3: Away 4 - Home 4", 
-  "Inning 4: Away 5 - Home 5", 
-  "Inning 5: Away 7 - Home 7", 
-  "Inning 6: Away 9 - Home 8", 
-  "Inning 7: Away 10 - Home 8", 
-  "Inning 8: Away 12 - Home 9",
-  "Inning 9: Away 13 - Home 11", 
-  "Final Score: Away 13 - Home 11"  
-]  
-  If there is a tie, invoking scoreboard(getInningScore,inning, 9) might return 
-  an array of strings like this:
-[
-  "Inning 1: Away 1 - Home 2", 
-  "Inning 2: Away 2 - Home 3",
-  "Inning 3: Away 4 - Home 4", 
-  "Inning 4: Away 5 - Home 5", 
-  "Inning 5: Away 7 - Home 7", 
-  "Inning 6: Away 9 - Home 8", 
-  "Inning 7: Away 10 - Home 8", 
-  "Inning 8: Away 12 - Home 10",
-  "Inning 9: Away 12 - Home 12", 
-  "This game will require extra innings: Away 12 - Home 12"
-]  
-  */
+console.log(getInningScore())
+    /* Task 5: scoreboard()
+    Use the scoreboard function below to do the following:
+      1. Receive a callback function, that you create, called `getInningScore`
+      2. Receive the callback function `inning` from Task 2
+      3. Receive a number of innings to be played
+      4. Return an array where each of it's index values equals a string stating the
+      Home and Away team's scores for each inning (see example below)
+      5. If there's a tie, add this message with the score to the end of the array: 
+         "This game will require extra innings: Away 12 - Home 12"  (see tie example below)
+         If there is no tie, add this message to the end of the array: 
+         "Final Score: Away 13 - Home 11"  (see no tie example below)
+      HINT: `getInningScore` should be invoked by `scoreboard` and use `inning` to get and return the scores back to `scoreboard`
+      
+      For example: If there is no tie, invoking scoreboard(getInningScore,inning, 9) might return 
+      an array of strings like this:
+    [
+      "Inning 1: Away 1 - Home 2", 
+      "Inning 2: Away 2 - Home 3",
+      "Inning 3: Away 4 - Home 4", 
+      "Inning 4: Away 5 - Home 5", 
+      "Inning 5: Away 7 - Home 7", 
+      "Inning 6: Away 9 - Home 8", 
+      "Inning 7: Away 10 - Home 8", 
+      "Inning 8: Away 12 - Home 9",
+      "Inning 9: Away 13 - Home 11", 
+      "Final Score: Away 13 - Home 11"  
+    ]  
+      If there is a tie, invoking scoreboard(getInningScore,inning, 9) might return 
+      an array of strings like this:
+    [
+      "Inning 1: Away 1 - Home 2", 
+      "Inning 2: Away 2 - Home 3",
+      "Inning 3: Away 4 - Home 4", 
+      "Inning 4: Away 5 - Home 5", 
+      "Inning 5: Away 7 - Home 7", 
+      "Inning 6: Away 9 - Home 8", 
+      "Inning 7: Away 10 - Home 8", 
+      "Inning 8: Away 12 - Home 10",
+      "Inning 9: Away 12 - Home 12", 
+      "This game will require extra innings: Away 12 - Home 12"
+    ]  
+      */
 
 
 function scoreboard( /* CODE HERE */ ) {
@@ -158,17 +170,17 @@ function scoreboard( /* CODE HERE */ ) {
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
-function foo() {
-    console.log('its working');
-    return 'bar';
-}
-export default {
-    foo,
-    processFirstItem,
-    counter1,
-    counter2,
-    inning,
-    finalScore,
-    getInningScore,
-    scoreboard,
-}
+// function foo() {
+//     console.log('its working');
+//     return 'bar';
+// }
+//  {
+//     foo,
+//     processFirstItem,
+//     counter1,
+//     counter2,
+//     inning,
+//     finalScore,
+//     getInningScore,
+//     scoreboard,
+// }
