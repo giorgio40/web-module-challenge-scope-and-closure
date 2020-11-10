@@ -64,7 +64,7 @@ Use the inning function below to do the following:
 function inning() {
     return Math.floor(Math.random() * 3);
 }
-
+inning();
 // console.log(inning())
 /* Task 3: finalScore()
 Use the finalScore function below to do the following:
@@ -82,13 +82,13 @@ For example: invoking finalScore(inning, 9) might return this object:
 
 function finalScore(inningCB, number) {
     let totalGame = {
-        home: 0,
-        away: 0
+        Home: 0,
+        Away: 0
     };
     for (let i = 0; i <= number; i++) {
         totalGame = {
-            home: totalGame.home + inningCB(),
-            away: totalGame.away + inningCB()
+            Home: totalGame.Home + inningCB(),
+            Away: totalGame.Away + inningCB()
         }
 
 
@@ -96,6 +96,7 @@ function finalScore(inningCB, number) {
     }
     return totalGame;
 }
+finalScore(inning, 9);
 
 // console.log(finalScore(inning, 9))
 
@@ -106,12 +107,12 @@ function finalScore(inningCB, number) {
 
 function getInningScore(inningCB) {
     return {
-        home: inningCB(),
-        away: inningCB()
+        Home: inningCB(),
+        Away: inningCB()
     }
 }
 
-
+getInningScore(inning);
 
 // return score;
 // console.log(getInningScore(inning))
@@ -159,37 +160,37 @@ Use the scoreboard function below to do the following:
   */
 
 
-function scoreboard(getInningScoreCB, inningCB, number) {
+// function scoreboard(getInningScoreCB, inningCB, number) {
 
-    const scores = [];
-    let homeScore = 0;
-    let awayScore = 0;
-    for (let i = 1; i < inning; i++) {
-        const current = getInningScoreCB(inning);
-        homeScore = homeScore + current;
-        awayScore = awayscore + current;
-        scores.push(`Inning ${i} Away ${awayscore} , Home ${HomeScore}`)
+//     const scores = [];
+//     let homeScore = 0;
+//     let awayScore = 0;
+//     for (let i = 1; i < inning; i++) {
+//         const current = getInningScoreCB(inning);
+//         homeScore = homeScore + current;
+//         awayScore = awayscore + current;
+//         scores.push(`Inning ${i} Away ${awayscore} , Home ${HomeScore}`)
 
-    }
-    return scores;
-}
-console.log(scoreboard(getInningscoreCB))
+//     }
+//     return scores;
+// }
+// console.log(scoreboard(getInningscoreCB))
 
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
-// function foo() {
-//     console.log('its working');
-//     return 'bar';
-// }
+function foo() {
+    console.log('its working');
+    return 'bar';
+}
 
-// export default {
-//     foo,
-//     processFirstItem,
-//     counter1,
-//     counter2,
-//     inning,
-//     finalScore,
-//     getInningScore,
-//     scoreboard,
-// }
+export default {
+    foo,
+    processFirstItem,
+    counter1,
+    counter2,
+    inning,
+    finalScore,
+    getInningScore,
+    // scoreboard
+}
